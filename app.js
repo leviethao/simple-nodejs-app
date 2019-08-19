@@ -8,7 +8,7 @@ const requestHandler = (request, response) => {
 
 const server = http.createServer(requestHandler)
 
-server.listen(port, (err) => {
+server.listen(process.env.PORT || port, (err) => {
   if (err) {
     return console.log('something bad happened', err)
   }
