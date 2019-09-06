@@ -2,13 +2,14 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const path = require('path')
+const port = 8081
 
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 app.use('/', express.static(path.join(__dirname, 'public')))
 
-var server = app.listen(8080, function () {
+var server = app.listen(process.env.PORT || port, function () {
     var host = server.address().address
     var port = server.address().port
     console.log('Simple app listening at http://%s:%s', host, port)
