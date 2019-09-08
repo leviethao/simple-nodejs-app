@@ -54,8 +54,8 @@ app.get('/getEventData', function (req, res) {
         "ZoneId": 5,
         "ZoneInfo": null,
         "Location": "9 Nguyễn Thái Học, Tp. Vĩnh Long",
-        "ImgUrl": "http://ai.tris.vn/origin/http___zm_tris_vn_zm_cgi-bin_nph-zms_monitor_3_user_admin_pass_quangbk06/img_1567556497057.jpg",
-        "VideoUrl": "Camera/Events/2019-09-04/255754.mp4",
+        "ImgUrl": "images/hinhcamera.png",
+        "VideoUrl": "http://213.226.254.135:91/mjpg/video.mjpg",
         "DetectCCTVId": 23,
         "DetectCCTVInfo": {
         "Id": 23,
@@ -88,8 +88,8 @@ app.get('/getEventData', function (req, res) {
         "ZoneId": 5,
         "ZoneInfo": null,
         "Location": "1 Hưng Đạo Vương, Tp. Vĩnh Long",
-        "ImgUrl": "http://ai.tris.vn/origin/http___zm_tris_vn_zm_cgi-bin_nph-zms_monitor_4_user_admin_pass_quangbk06/img_1567556693032.jpg",
-        "VideoUrl": "",
+        "ImgUrl": "images/hinhcamera2.png",
+        "VideoUrl": "http://zm.tris.vn/zm/cgi-bin/nph-zms?monitor=6&user=admin&pass=quangbk06",
         "DetectCCTVId": 24,
         "DetectCCTVInfo": {
         "Id": 24,
