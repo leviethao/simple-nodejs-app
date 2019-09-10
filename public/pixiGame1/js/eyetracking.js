@@ -23,13 +23,12 @@ const animationNames = [
 ];
 
 // load spine data
-const host = 'https://hao-nodejs-app.herokuapp.com';
 PIXI.Loader.shared
-    .add('skeleton', host + '/assets/shizuku_ske.json')
-    .add('texture_png_0', host + '/assets/texture_00.png')
-    .add('texture_png_1', host + '/assets/texture_01.png')
-    .add('texture_png_2', host + '/assets/texture_02.png')
-    .add('texture_png_3', host + '/assets/texture_03.png')
+    .add('skeleton', '/pixiGame1/assets/shizuku_ske.json')
+    .add('texture_png_0', '/pixiGame1/assets/texture_00.png')
+    .add('texture_png_1', '/pixiGame1/assets/texture_01.png')
+    .add('texture_png_2', '/pixiGame1/assets/texture_02.png')
+    .add('texture_png_3', '/pixiGame1/assets/texture_03.png')
     .load(onAssetsLoaded);
 
 function onAssetsLoaded(loader, res) {
