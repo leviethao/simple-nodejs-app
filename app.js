@@ -2,12 +2,19 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const path = require('path')
+const cons = require('consolidate');
 const port = 8081
 
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 app.use('/', express.static(path.join(__dirname, 'public')))
+
+// view engine setup
+app.engine('html', cons.swig)
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
+
 
 var server = app.listen(process.env.PORT || port, function () {
     var host = server.address().address
@@ -26,6 +33,10 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
     console.log(req.body)
     res.send({data: req.body})
+})
+
+app.get('/pixiGame1', function (req, res) {
+    res.render('pixi');
 })
 
 // app.get('/xlsx-template', function (req, res) {
