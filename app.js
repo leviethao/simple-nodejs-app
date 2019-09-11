@@ -15,12 +15,40 @@ app.engine('html', cons.swig)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
+// data base
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://hao:hao12345@ds019886.mlab.com:19886/pixigame1";
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  console.log("Database created!");
+  db.close();
+});
 
 var server = app.listen(process.env.PORT || port, function () {
     var host = server.address().address
     var port = server.address().port
     console.log('Simple app listening at http://%s:%s', host, port)
 })
+
+// ===================== database interaction function =================
+function insert (collection, document, callback) {
+    MongoClient.connect(url, function(err, db) {
+        if (err) {
+            callback(err, null);
+            throw err;
+        }
+        var dbo = db.db("pixigame1");
+        dbo.collection(collection).insertOne(document, function(err, res) {
+          if (err) {
+              callback(err, null)
+              throw err;
+          }
+          callback(null, res)
+          db.close();
+        });
+      });
+}
 
 // ================== Routes ==============================
 const commonController = require('./controllers/commonController')
@@ -37,6 +65,20 @@ app.post('/', function (req, res) {
 
 app.get('/pixiGame1', function (req, res) {
     res.render('pixi');
+})
+
+app.get('/textAnimation', function (req, res) {
+    res.render('textAnimation');
+})
+
+app.post('/pixiGame1/message', function (req, res) {
+    insert('message', req.body, function (err, result) {
+        if (err) {
+            res.status(500).send('Internal Server Error');
+        } else {
+            res.status(201).send('OK');
+        }
+    });
 })
 
 // app.get('/xlsx-template', function (req, res) {

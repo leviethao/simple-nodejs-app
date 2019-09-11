@@ -1,11 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        #bot-message {
+            left: 150px;
+            top: 50px;
+            color: #ffffff;
+            position: absolute
+        }
+        .pure-css-text {
+            position: relative !important;
+        }
+        #user-message {
+            left: 50px;
+            top: 400px;
+            position: absolute;
+            color: #ffffff;
+        }
+        #input-message {
+            margin: 10px 10px;
+        }
+    </style>
     <script src="/pixiGame1/js/pixi.min.js"></script>
+    <link rel="stylesheet" href="/TextAnimation/styles/pure-css-text.css" />
 </head>
 <body>
+    <div class="user-input-container">
+        <input id="input-message" type="text" placeholder="Bạn nói gì với bot đi!"/>
+    </div>
 
+    <div id="bot-message">
+        <p>Bot: </p>
+        <div class="pure-css-text">
+            <span>L</span>
+            <span>Ê</span>
+            <span>&nbsp;</span>
+            <span>V</span>
+            <span>I</span>
+            <span>Ệ</span>
+            <span>T</span>
+            <span>&nbsp;</span>
+            <span>H</span>
+            <span>À</span>
+            <span>O</span>
+        </div>
+    </div>
+    <div id="user-message">
+
+    </div>
 </body>
 <script src="/pixiGame1/js/pixi-dragonbones.js"></script>
 <script src="/pixiGame1/js/eyetracking.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    let inputMessage = document.getElementById('input-message');
+    // Execute a function when the user releases a key on the keyboard
+    inputMessage.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            
+            if (inputMessage.value != '') {
+                sendMessage(inputMessage.value);
+                inputMessage.value = '';
+            }
+        }
+    });
+    
+    function sendMessage (message) {
+        let userMessage = document.getElementById('user-message');
+        let injectHTML = '<p>Bạn: </p> <div class="pure-css-text">';
+        for (let letter of message) {
+            injectHTML = injectHTML.concat(`<span>${letter != ' ' ? letter : '&nbsp'}</span>`);
+        }
+
+        injectHTML = injectHTML.concat('</div>')
+        userMessage.innerHTML = injectHTML;
+
+        axios.post('/pixiGame1/message', {message: message, date: new Date().toString()});
+    }
+</script>
 </html>
