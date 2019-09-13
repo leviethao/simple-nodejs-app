@@ -123,6 +123,7 @@ app.get('/getEventData', function (req, res) {
         "Note": "",
         "IsActive": true
         },
+        
         {
         "Id": 255755,
         "EventTypeId": 8,
@@ -134,8 +135,8 @@ app.get('/getEventData', function (req, res) {
         },
         "EventLevelId": 1,
         "EventLevelInfo": null,
-        "Date": "05/09/2019 15:24:53",
-        "DateString": "05/09/2019 15:24:53.797",
+        "Date": "05/09/2019 15:22:53",
+        "DateString": "05/09/2019 15:22:53.797",
         "X": 105.973851531744,
         "Y": 10.2544043931305,
         "ZoneId": 5,
@@ -157,6 +158,147 @@ app.get('/getEventData', function (req, res) {
         "Note": "",
         "IsActive": true
         },
+
+        {
+            "Id": 2557551,
+            "EventTypeId": 8,
+            "EventTypeInfo": {
+            "Id": 8,
+            "Name": "Xe lạ",
+            "Code": "XG",
+            "Type": "TRAFFIC"
+            },
+            "EventLevelId": 1,
+            "EventLevelInfo": null,
+            "Date": "05/09/2019 15:23:37",
+            "DateString": "05/09/2019 15:23:37.157",
+            "X": 105.971783548594,
+            "Y": 10.2505865270101,
+            "ZoneId": 5,
+            "ZoneInfo": null,
+            "Location": "9 Nguyễn Thái Học, Tp. Vĩnh Long",
+            "ImgUrl": "images/hinhcamera.png",
+            "VideoUrl": "http://213.226.254.135:91/mjpg/video.mjpg",
+            "DetectCCTVId": 23,
+            "DetectCCTVInfo": {
+            "Id": 23,
+            "Code": null,
+            "Name": null,
+            "X": 0,
+            "Y": 0,
+            "Location": "9 Nguyễn Thái Học, Tp. Vĩnh Long"
+            },
+            "IsManulaDetect": false,
+            "IsEnd": true,
+            "Note": "",
+            "IsActive": true
+            },
+
+        {
+            "Id": 2557552,
+            "EventTypeId": 8,
+            "EventTypeInfo": {
+            "Id": 8,
+            "Name": "Xe lạ",
+            "Code": "XG",
+            "Type": "TRAFFIC"
+            },
+            "EventLevelId": 1,
+            "EventLevelInfo": null,
+            "Date": "05/09/2019 15:21:37",
+            "DateString": "05/09/2019 15:21:37.157",
+            "X": 105.971783548594,
+            "Y": 10.2505865270101,
+            "ZoneId": 5,
+            "ZoneInfo": null,
+            "Location": "9 Nguyễn Thái Học, Tp. Vĩnh Long",
+            "ImgUrl": "images/hinhcamera.png",
+            "VideoUrl": "http://213.226.254.135:91/mjpg/video.mjpg",
+            "DetectCCTVId": 23,
+            "DetectCCTVInfo": {
+            "Id": 23,
+            "Code": null,
+            "Name": null,
+            "X": 0,
+            "Y": 0,
+            "Location": "9 Nguyễn Thái Học, Tp. Vĩnh Long"
+            },
+            "IsManulaDetect": false,
+            "IsEnd": true,
+            "Note": "",
+            "IsActive": true
+        },
+
+        {
+            "Id": 2557553,
+            "EventTypeId": 8,
+            "EventTypeInfo": {
+            "Id": 8,
+            "Name": "Xe lạ",
+            "Code": "XG",
+            "Type": "TRAFFIC"
+            },
+            "EventLevelId": 1,
+            "EventLevelInfo": null,
+            "Date": "05/09/2019 15:22:37",
+            "DateString": "05/09/2019 15:22:37.157",
+            "X": 105.971783548594,
+            "Y": 10.2505865270101,
+            "ZoneId": 5,
+            "ZoneInfo": null,
+            "Location": "9 Nguyễn Thái Học, Tp. Vĩnh Long",
+            "ImgUrl": "images/hinhcamera.png",
+            "VideoUrl": "http://213.226.254.135:91/mjpg/video.mjpg",
+            "DetectCCTVId": 23,
+            "DetectCCTVInfo": {
+            "Id": 23,
+            "Code": null,
+            "Name": null,
+            "X": 0,
+            "Y": 0,
+            "Location": "9 Nguyễn Thái Học, Tp. Vĩnh Long"
+            },
+            "IsManulaDetect": false,
+            "IsEnd": true,
+            "Note": "",
+            "IsActive": true
+        },
+
+        {
+            "Id": 2557554,
+            "EventTypeId": 8,
+            "EventTypeInfo": {
+            "Id": 8,
+            "Name": "Xe lạ",
+            "Code": "XG",
+            "Type": "TRAFFIC"
+            },
+            "EventLevelId": 1,
+            "EventLevelInfo": null,
+            "Date": "05/09/2019 15:25:37",
+            "DateString": "05/09/2019 15:25:37.157",
+            "X": 105.971783548594,
+            "Y": 10.2505865270101,
+            "ZoneId": 5,
+            "ZoneInfo": null,
+            "Location": "9 Nguyễn Thái Học, Tp. Vĩnh Long",
+            "ImgUrl": "images/hinhcamera.png",
+            "VideoUrl": "http://213.226.254.135:91/mjpg/video.mjpg",
+            "DetectCCTVId": 23,
+            "DetectCCTVInfo": {
+            "Id": 23,
+            "Code": null,
+            "Name": null,
+            "X": 0,
+            "Y": 0,
+            "Location": "9 Nguyễn Thái Học, Tp. Vĩnh Long"
+            },
+            "IsManulaDetect": false,
+            "IsEnd": true,
+            "Note": "",
+            "IsActive": true
+        },
+            
         {
             "Id": 255756,
             "EventTypeId": 2,
