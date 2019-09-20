@@ -368,6 +368,74 @@ app.get('/getEventData', function (req, res) {
             "IsActive": true
         },
         {
+            "Id": 2557571,
+            "EventTypeId": 1,
+            "EventTypeInfo": {
+            "Id": 1,
+            "Name": "Xả rác",
+            "Code": "GARBAGE",
+            "Type": "ANTT"
+            },
+            "EventLevelId": 1,
+            "EventLevelInfo": null,
+            "Date": "2019-09-05T15:26:53",
+            "DateString": "05/09/2019 15:24:53.797",
+            "X": 105.973851531744,
+            "Y": 10.2544043931305,
+            "ZoneId": 5,
+            "ZoneInfo": null,
+            "Location": "1 Hưng Đạo Vương, Tp. Vĩnh Long",
+            "ImgUrl": "images/hinhcamera2.png",
+            "VideoUrl": "http://zm.tris.vn/zm/cgi-bin/nph-zms?monitor=6&user=admin&pass=quangbk06",
+            "DetectCCTVId": 24,
+            "DetectCCTVInfo": {
+            "Id": 24,
+            "Code": null,
+            "Name": null,
+            "X": 0,
+            "Y": 0,
+            "Location": "1 Hưng Đạo Vương, Tp. Vĩnh Long"
+            },
+            "IsManulaDetect": false,
+            "IsEnd": true,
+            "Note": "",
+            "IsActive": true
+        },
+        {
+            "Id": 2557572,
+            "EventTypeId": 1,
+            "EventTypeInfo": {
+            "Id": 1,
+            "Name": "Xả rác",
+            "Code": "GARBAGE",
+            "Type": "ANTT"
+            },
+            "EventLevelId": 1,
+            "EventLevelInfo": null,
+            "Date": "2019-09-05T15:26:53",
+            "DateString": "05/09/2019 15:28:53.797",
+            "X": 105.973851531744,
+            "Y": 10.2544043931305,
+            "ZoneId": 5,
+            "ZoneInfo": null,
+            "Location": "1 Hưng Đạo Vương, Tp. Vĩnh Long",
+            "ImgUrl": "images/hinhcamera2.png",
+            "VideoUrl": "http://zm.tris.vn/zm/cgi-bin/nph-zms?monitor=6&user=admin&pass=quangbk06",
+            "DetectCCTVId": 24,
+            "DetectCCTVInfo": {
+            "Id": 24,
+            "Code": null,
+            "Name": null,
+            "X": 0,
+            "Y": 0,
+            "Location": "1 Hưng Đạo Vương, Tp. Vĩnh Long"
+            },
+            "IsManulaDetect": false,
+            "IsEnd": true,
+            "Note": "",
+            "IsActive": true
+        },
+        {
             "Id": 255758,
             "EventTypeId": 3,
             "EventTypeInfo": {
