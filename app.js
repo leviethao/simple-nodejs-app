@@ -107,8 +107,8 @@ app.get('/getEventData', function (req, res) {
         "ZoneId": 5,
         "ZoneInfo": null,
         "Location": "9 Nguyễn Thái Học, Tp. Vĩnh Long",
-        "ImgUrl": "images/hinhcamera.png",
-        "VideoUrl": "http://213.226.254.135:91/mjpg/video.mjpg",
+        "ImgUrl": "http://zm.tris.vn/zm/cgi-bin/nph-zms?monitor=6&user=admin&pass=quangbk06&mode=single",
+        "VideoUrl": "http://zm.tris.vn/zm/cgi-bin/nph-zms?monitor=6&user=admin&pass=quangbk06",
         "DetectCCTVId": 23,
         "DetectCCTVInfo": {
         "Id": 23,
