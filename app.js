@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const path = require('path')
 const cons = require('consolidate');
+const fs = require('fs');
 const port = 8081
 
 const app = express()
@@ -679,3 +680,69 @@ app.get('/getEventData', function (req, res) {
 
 app.post('/upload', commonController.uploadFile)
 app.get('/upload', function () {console.log('hello222')})
+
+
+app.post('/fcmToken', function (req, res) {
+    console.log('FCM TOKEN: ', req.body.fcmToken);
+    fs.writeFileSync('public/files/fcm-token.json', JSON.stringify(req.body));
+    res.send('ok');
+});
+
+
+app.post('/notify', function (req, res) {
+    let fcmToken = '';
+    fs.readFile('public/files/fcm-token.json', (err, data) => {
+        if (err) throw err;
+        fcmToken = JSON.parse(data).fcmToken;
+    });
+
+    console.log('token: ', fcmToken);
+    var notification = {
+        title: 'Demo title',
+        body: 'Demo body'
+    };
+
+    var androidConfig = {
+        // Priority: AndroidMessagePriorityEnum.HIGH,
+        notification: {
+            clickAction: "FLUTTER_NOTIFICATION_CLICK",
+        },
+        priority: "high"
+    };
+
+    var apnsConfig = {
+        payload: {
+            aps: {
+                badge: 1,
+                sound: "default",
+                // category: "NEW_MESSAGE_CATEGORY",
+                alert: {
+                    body : 'great match!',
+                    title : 'Portugal vs. Denmark',
+                  },
+            },
+        }
+    };
+
+    var message = {
+        // ValidateOnly: false,
+        
+            token: fcmToken,
+            // data: {},
+            notification: notification,
+            android: androidConfig,
+            apns: apnsConfig,
+    };
+    
+    // Send a message to devices subscribed to the provided topic.
+    admin.messaging().send(message)
+    .then((response) => {
+        // Response is a message ID string.
+        console.log('Successfully sent message:', response);
+    })
+    .catch((error) => {
+        console.log('Error sending message:', error);
+    });
+
+    res.send({result: 'ok'});
+})
