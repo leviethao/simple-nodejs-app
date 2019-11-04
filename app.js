@@ -4,6 +4,7 @@ const cors = require('cors')
 const path = require('path')
 const cons = require('consolidate');
 const fs = require('fs');
+const admin = require('firebase-admin');
 const port = 8081
 
 const app = express()
@@ -31,6 +32,13 @@ var server = app.listen(process.env.PORT || port, function () {
     var port = server.address().port
     console.log('Simple app listening at http://%s:%s', host, port)
 })
+
+// =============================== firebase setup ===============================
+// $env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\levie\Documents\Projects\NodeJS\firebase-admin\cec-tris-firebase-adminsdk-gwyhl-7b9aa4b210.json"
+admin.initializeApp({
+    credential: admin.credential.applicationDefault(),
+    databaseURL: 'https://cec-tris.firebaseio.com'
+});
 
 // ===================== database interaction function =================
 function insert (collection, document, callback) {
